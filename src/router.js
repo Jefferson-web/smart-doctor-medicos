@@ -41,13 +41,20 @@ const router = new VueRouter({
             path: '/registro-medico',
             name: 'RegistroMedico',
             component: () => import("./components/RegistroMedico")
-        },
-        {
-            path: '/cuenta-doctor',
-            name: 'CuentaDoctor',
-            component: () => import("./components/CuentaDoctor")
         }
     ]
 });
+
+const routesAllowed = ["Login", "RegistroMedico"];
+import TokenService from './services/TokenService';
+
+router.beforeEach((to, from, next) => {
+    if (!routesAllowed.includes(to.name) && !TokenService.isAuthenticate) {
+        next({ name: 'Login' });
+    } else {
+        next();
+    }
+});
+
 
 export default router;
