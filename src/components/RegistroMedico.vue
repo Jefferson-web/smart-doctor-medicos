@@ -42,10 +42,7 @@
           v-model="medico.especialidadId"
         >
           <option value="0" selected>Seleccionar</option>
-          <option
-            v-for="(especialidad, index) in especialidades"
-            :key="index"
-            :value="especialidad.especialidadId"
+          <option v-for="(especialidad, index) in especialidades" :key="index" :value="especialidad.especialidadId"
           >
             {{ especialidad.nombre }}
           </option>
@@ -160,16 +157,14 @@ export default {
   },
   methods: {
     ListarResidencias() {
-      MedicoService.ListarResidencias()
-        .then((response) => {
+      MedicoService.ListarResidencias().then((response) => {
           this.residencias = response.data;
           console.log(this.residencias);
         })
         .catch((e) => console.log(e));
     },
     ListarTodasLasEspecialidades() {
-      MedicoService.ListarTodasLasEspecialidades()
-        .then((response) => {
+      MedicoService.ListarTodasLasEspecialidades().then((response) => {
           this.especialidades = response.data;
           console.log(this.especialidades);
         })
@@ -183,7 +178,7 @@ export default {
       .catch(e => console.log(e));
     }
   },
-  mounted() {
+  mounted() { // Primer metodo a ejecutarse
     this.ListarResidencias();
     this.ListarTodasLasEspecialidades();
   },

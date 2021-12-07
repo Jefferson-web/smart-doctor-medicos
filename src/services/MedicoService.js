@@ -47,7 +47,7 @@ class MedicoService {
     }
 
     ListarResidencias(){
-        return http.get('/AfiliacionMedicos/ListarResidencias');
+        return http.get('/AfiliacionMedicos/ListarResidencias'); // Lista de residencias
     }
 
     ListarTodasLasEspecialidades(){
@@ -57,7 +57,7 @@ class MedicoService {
     RegistrarMedico(medico){
         return http.post('/AfiliacionMedicos/RegistrarMedico', medico);
     }
-
+    
 }
 
 export default new MedicoService();
