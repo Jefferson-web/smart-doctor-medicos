@@ -1,4 +1,4 @@
-# Smart Doctor Pacientes - Front-end 
+# Smart Doctor Medicos - Front-end 
 
 Desarrollo de la aplicación Smart Doctor para el curso de Arquitectura Orientada a Servicios. Contempla el uso de las tecnologías de VueJS y .NET.
 
